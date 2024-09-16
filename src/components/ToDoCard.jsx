@@ -1,8 +1,9 @@
+import moment from 'moment/moment'
 import React from 'react'
 import { Card, CardBody, CardFooter, CardTitle } from 'reactstrap'
 
 function ToDoCard(props) {
-    const {title ="", description ="", updatedAt=""} = props
+    const {title ="", description ="", createdAt=""} = props
   return (
     <Card>
         <CardTitle>
@@ -12,7 +13,7 @@ function ToDoCard(props) {
             {description}
         </CardBody>
         <CardFooter>
-            Last updated at {updatedAt}
+            Created at {moment(createdAt).format('DD/MM/YY HH:mm:ss')}
         </CardFooter>
     </Card>
   )
